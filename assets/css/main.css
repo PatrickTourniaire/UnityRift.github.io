@@ -1,0 +1,153 @@
+
+body {
+    background-color: #E9DDF6;
+    margin: 0;
+    font-family: Segoe UI;
+}
+
+.main-content {
+    height: auto;
+    width: 100%;
+    display: flex;
+}
+
+.left-col,
+.right-col{
+    width: 50%;
+    display: flex;
+}
+
+.left-col {
+    align-items: center;
+    justify-content: center;
+}
+
+
+.left-col .content {
+    width: 50%;
+    align-content: center;
+}
+
+header {
+    color: #F3AAF3;
+    font-size: 42px;
+}
+
+.left-col #maker {
+    color: #eebef7;
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.left-col #desc,
+.left-col #desc-pc{
+    color: #c6c6c6;
+    margin: 15px;
+    font-size: 14px;
+    line-height: 25px;
+}
+
+
+.left-col #desc-pc {
+    display: none;
+}
+
+.right-col .content {
+    align-content: flex-start;
+}
+
+.right-col .content #img_items {
+    display: inline-block;
+}
+
+.right-col #pc {
+    width: 400px;
+}
+
+.right-col #mobile {
+    height: 100px;
+    position: relative;
+    top: -40px;
+}
+
+#press-info {
+    color: #DEA0E9;
+    font-size: 14px;
+    margin: 30px 0 15px 0;
+}
+
+.right-col .content .desc {
+    text-align: center
+}
+
+#back {
+    color: #eebef7;
+    
+}
+
+#back-txt,
+#back-arrow {
+    display: inline-block;
+}
+
+#back-txt {
+    margin: 0;
+}
+
+#back-arrow {
+    height: 15px;
+    margin: 0 10px;
+}
+
+#lastned {
+    background: #E9DDF6;
+    border: solid #DEA0E9 1px;
+    color: #DEA0E9;
+    position: relative;
+    width: 150px;
+    margin-left: -75px;
+    left: 50%;
+    padding: 10px;
+    border-radius: 200px;
+}
+
+@media only screen and (max-width: 940px) {
+    .right-col #mobile {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .main-content {
+        width: 90%;
+        margin: 0 5%;
+        display: block;
+    }
+    
+    .left-col,
+    .right-col {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .right-col {
+        margin-top: 20px;
+    }
+    
+    .right-col .content{
+        width: 100%;
+        text-align: center
+        
+    }
+}
+
+@media only screen and (max-width: 530px) {
+    .right-col #pc {
+        width: 60vw;
+        margin-bottom: 20px;
+    }
+    
+    .content .desc {
+        padding: 0 30px;
+    }
+}
