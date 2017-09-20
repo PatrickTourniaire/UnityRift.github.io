@@ -112,9 +112,6 @@ header {
     padding: 10px;
     border-radius: 200px;
     outline: none;
-    
-    -webkit-transition-duration: 0.4s;
-    transition-duration: 0.4s;
 }
 
 @media only screen and (max-width: 940px) {
