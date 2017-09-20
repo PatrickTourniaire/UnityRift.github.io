@@ -9,6 +9,9 @@ body {
     height: auto;
     width: 100%;
     display: flex;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .left-col,
@@ -50,6 +53,7 @@ header {
 
 .left-col #desc-pc {
     display: none;
+    position: absolute
 }
 
 .right-col .content {
@@ -104,11 +108,13 @@ header {
     border: solid #DEA0E9 1px;
     color: #DEA0E9;
     position: relative;
-    width: 150px;
-    margin-left: -75px;
-    left: 50%;
+    width: 120px;
     padding: 10px;
     border-radius: 200px;
+    outline: none;
+    
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
 }
 
 @media only screen and (max-width: 940px) {
@@ -144,7 +150,7 @@ header {
 @media only screen and (max-width: 530px) {
     .right-col #pc {
         width: 60vw;
-        margin-bottom: 20px;
+        margin-bottom: 50px;
     }
     
     .content .desc {

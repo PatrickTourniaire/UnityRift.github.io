@@ -2,6 +2,8 @@
 <html>
     <head>
         <title>Mystic Beach</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
         <link rel="stylesheet" type="text/css" href="assets/css/main.css">     
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="js/main.js"></script>
@@ -33,12 +35,13 @@
                 <div class="content">
                     <div id="img_items">
                         <img src="assets/svg/background_pc.svg" id="pc">
-                        <img src="assets/svg/background_mobile.svg" id="mobile">
                     </div>
                 
                     <div class="desc">
-                        <p id="press-info">Klikk på en av enhetene for mer informasjon</p>
-                        <p id="lastned">Lastned</p>
+                        <p id="press-info">Klikk på enheten for mer informasjon</p>
+                        <form method="get" action="download/mystic-beach-pack.rar">
+                            <button type="submit" id="lastned">Lastned .rar</button>
+                        </form>
                     </div>
                 </div>
             </div>
