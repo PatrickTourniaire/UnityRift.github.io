@@ -53,7 +53,6 @@ header {
 
 .left-col #desc-pc {
     display: none;
-    position: absolute
 }
 
 .right-col .content {
@@ -108,10 +107,9 @@ header {
     border: solid #DEA0E9 1px;
     color: #DEA0E9;
     position: relative;
-    width: 120px;
+    width: 150px;
     padding: 10px;
     border-radius: 200px;
-    outline: none;
 }
 
 @media only screen and (max-width: 940px) {
