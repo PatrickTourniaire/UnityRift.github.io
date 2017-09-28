@@ -1,0 +1,31 @@
+.nav-open {
+    animation: 0.4s nav-open forwards;
+}
+
+.nav-close {
+    animation: 0.4s nav-close;
+}
+
+@keyframes nav-open {
+    0% {
+        top: 0;
+        left: 0;
+    }
+    
+    100% {
+        top: 100px;
+        left: 50px;
+    }
+}
+
+@keyframes nav-close {
+    0% {
+        top: 100px;
+        left: 50px;
+    }
+    
+    100% {
+        top: 0;
+        left: 0;
+    }
+}

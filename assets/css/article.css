@@ -1,0 +1,25 @@
+.artc-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 60%;
+    width: 100%;
+    background: url("../img/mystic_beach/desktop.png") center no-repeat ;
+}
+
+.filter {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    left: 0;
+    top: 0;
+    background: #3E4250;
+    opacity: 0.6;
+}
+
+.artc-body {
+    margin: 0 20%;
+    position: absolute;
+    top: 65%;
+    color: #9EA4B9;
+}
