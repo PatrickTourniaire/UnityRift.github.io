@@ -1,11 +1,11 @@
 // Initialize Firebase
 var config = {
-   apiKey: "AIzaSyC-pWvVWK74FSY1AgrzHjYqVGSUrA_jI7c",
-   authDomain: "it-database-d0082.firebaseapp.com",
-   databaseURL: "https://it-database-d0082.firebaseio.com",
-   projectId: "it-database-d0082",
+   apiKey: "###",
+   authDomain: "###",
+   databaseURL: "###",
+   projectId: "###",
    storageBucket: "",
-   messagingSenderId: "542378097247"
+   messagingSenderId: "###"
 };
 
 // Init firebase app
@@ -27,3 +27,33 @@ function addProject(title, date, description) {
     
 }
 
+projectRef.on('child_added', function(data) {
+    var data = {
+        title: data.val().title,
+        date: data.val().date,
+        key: data.key
+    }
+    
+    newProject(data.key, data);
+    
+});
+
+projectRef.on('child_changed', function(data) {
+    changeProject();
+});
+
+projectRef.on('child_removed', function(data) {
+    removeProject(data.key);
+});
+
+    
+function newProject(key, data) {
+    var template = $("#card-tenplate").html();
+    var card = Mustache.render(template, data);
+    
+    $(".content-grid").append(card);
+}
+
+function removeProject(key) {
+    $("." + key).remove();
+}

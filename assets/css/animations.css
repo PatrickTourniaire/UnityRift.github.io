@@ -1,9 +1,40 @@
+/* Navigation animator */
 .nav-open {
     animation: 0.4s nav-open forwards;
 }
 
 .nav-close {
     animation: 0.4s nav-close;
+}
+
+/* Scroll animator */
+.header-fix {
+ animation: 0.2s fix-header forwards;    
+}
+
+/* Generic animations */
+.slide-enter {
+    animation: 1s slide-enter;
+}
+
+.fade-in {
+    animation: 1s fade-in;
+}
+
+@keyframes fix-header {
+    0% {
+        
+    }
+    
+    100% {
+        position: fixed;
+        top: 0;
+        transform: translateY(0);
+        left: 0;
+        background: #3E4250;
+        padding: 10px;
+        width: 100%;
+    }
 }
 
 @keyframes nav-open {
@@ -27,5 +58,27 @@
     100% {
         top: 0;
         left: 0;
+    }
+}
+
+@keyframes slide-enter {
+    0% {
+        top: 60%;
+        opacity: 0;
+    }
+    
+    100% {
+        top: 40%;
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    
+    100% {
+        opacity: 1;
     }
 }

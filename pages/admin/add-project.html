@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <div class="artc-header">
+        </div>
+        <div class="artc-body">
+        </div>
+    </body>
+</html>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta rel="UTF-8">
+        
+        <link rel="stylesheet" type="text/css" href="../../assets/css/main.css"/>
+        <link rel="stylesheet" type="text/css" href="../../assets/css/animations.css"/>
+        <link rel="stylesheet" type="text/css" href="../../assets/css/admin.css"/>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
+    </head>
+    <body>
+        <div class="front-content">
+            <!--
+            <div class="nav-front">
+                <object data="../../assets/svg/menu.svg" type="image/svg+xml" class="menu"></object>
+            </div>
+            -->
+            
+            <div class="header-wrapper">
+                <p id="header-txt">New Project</p>
+                <p id="header-desc">Add new project & article</p>
+            </div>
+            
+            <div class="action-content">
+                <form id="action">
+                    <input type="text" id="title" placeholder="Title" />
+                    
+                    <input type="date" id="date"/>
+                    
+                    <input type="url" placeholder="Url" id="url" />
+                    
+                    <div class="submit">
+                        <input type="submit" id="cancel" value="cancel"/>
+                        
+                        <div id="sep-line"></div>
+                        
+                        <input type="submit" id="next" value="next"/>
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+        <div class="back-content">
+            <div class="nav-bar">
+                <nav>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Portifolio</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        
+        <!-- DOM manipulators -->
+        <script src="../../assets/js/animations.js"></script>
+        <script src="../../functions/js/init/firebase-init.js"></script>
+        <script src="../../functions/js/click-actions.js"></script>
+        <script src="../../assets/js/scroll-events.js"></script>
+        <script src="../../assets/js/positions.js"></script>
+    </body>
+</html>

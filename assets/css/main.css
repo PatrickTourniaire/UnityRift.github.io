@@ -3,7 +3,7 @@ body {
     padding: 0;
     background: #9EA4B9;
     font-family: Segoe UI;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .front-content {
@@ -102,5 +102,5 @@ nav ul li a {
 .header-container p {
     margin: 0;
     font-size: 12px;
-    color: #8DA6FF;
+    color: #688aff;
 }

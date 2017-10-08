@@ -9,8 +9,21 @@
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.js"></script>
     </head>
     <body>
+        <script id="card-tenplate" type="text/template">
+            <div class="card {{key}}">
+                <div class="img-container">
+                    <img src="assets/img/mystic_beach/mobile.png" id="thumbnail" />
+                </div>
+                <div class="header-container">
+                 <header id="card-title">{{title}}</header>
+                 <p id="date">{{date}}</p>
+                </div>
+            </div>
+        </script>
+        
         <div class="front-content">
             <div class="nav-front">
                 <object data="assets/svg/menu.svg" type="image/svg+xml" class="menu"></object>
@@ -22,15 +35,6 @@
                     <div id="sep-line"></div>
                 </div>
                 <div class="content-grid">
-                    <div class="card">
-                        <div class="img-container">
-                            <img src="assets/img/mystic_beach/mobile.png" id="thumbnail" />
-                        </div>
-                        <div class="header-container">
-                            <header id="card-title">Mystic Beach</header>
-                            <p id="date">20. Januar</p>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
