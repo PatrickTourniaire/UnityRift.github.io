@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Milky Way</title>
+        
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        
+        <link rel="stylesheet" type="text/css" href="assets/css/main.css" />
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div class="header-wrapper">
+            <p>A journey through the milky way</p>
+            <button id="startAnim">Start</button>
+        </div>
+        <div class="milky-anim">
+            <div class="animation"></div>
+        </div>
+        
+        <div class="footer">
+            <p>By: Patrick Tourniaire</p>
+        </div>
+        
+        <script>
+        
+            $("#startAnim").click(function() {
+                if ($(".animation").is(".animate")) {
+                    $(".animation").removeClass("animate");
+                    $("#startAnim").html("Start");
+                } else {
+                    $(".animation").addClass("animate");
+                    $("#startAnim").html("End");
+                }
+             });
+                
+        </script>
+    </body>
+</html>

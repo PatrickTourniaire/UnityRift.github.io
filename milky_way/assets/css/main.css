@@ -1,0 +1,71 @@
+body {
+    background: #3a3a3a;
+    font-family: Segoe UI;
+}
+
+.milky-anim {
+    width:250px;
+    height: 250px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left:  50%;
+    top: 50%;
+}
+
+.header-wrapper {
+    text-align: center;
+}
+
+.header-wrapper p {
+    font-size: 26px;
+    font-weight: 300;
+    color: #95989A;
+}
+
+.header-wrapper button {
+    background: transparent;
+    color: #95989A;
+    border: solid 1px #3498DB;
+    padding: 10px 50px;
+    border-radius: 100px;
+}
+
+.header-wrapper button:focus {
+    outline: none;
+}
+
+.milky-anim .animation {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../img/milky-01.png");
+    background-repeat: no-repeat;
+    background-position: top;
+}
+
+.footer {
+    color: #95989A;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+}
+
+.animate {
+    animation: 5s steps(34) animate infinite;
+}
+
+@keyframes stars {
+    to {
+        background-position: bottom;
+    }
+}
+
+@keyframes animate {
+    to {
+        background-position: 0 -8500px;
+    }
+}
