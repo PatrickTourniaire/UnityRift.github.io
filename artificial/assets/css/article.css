@@ -1,0 +1,85 @@
+.article-actions {
+    position: relative;
+    width: 90%;
+    -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+    left: 50%;
+    position: relative;
+    padding: 20px;
+    background: #fff;
+    border-radius: 15px;
+    border: solid 1px #95989A;
+}
+
+.article-actions p {
+    color: #95989A;
+    display: inline-block;
+}
+
+.article-actions #download {
+    width: 25px;
+    height: 25px;
+    border: none;
+    text-align: right;
+    position: absolute;
+    background: url("../img/icons8-download.png");
+    background-size: cover;
+    right: 20px;
+    -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+    top: 50%;
+}
+
+.section {
+    width: 90%;
+    -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+    left: 50%;
+    margin-top: 40px;
+    position: relative;
+    border-radius: 15px;
+    border: solid 1px #95989A;
+    padding: 20px;
+}
+
+.section a {
+    color: #95989A;
+    font-style: italic;
+}
+
+.section .header #left {
+    font-family: Georgia;
+}
+
+.section .header #sep {
+    width: 25px;
+    height: 2px;
+    background: #F0F969;
+}
+
+.section .header #left {
+    display: inline-block;
+}
+
+.section .header #right {
+    display: inline-block;
+    position: relative;
+    margin-left: 70px;
+    font-family: Segoe UI;
+    color: #95989A;
+    text-align: center;
+}
+
+.section .body {
+    margin-top: 20px;
+    color: #95989A;
+    line-height: 2;
+}
+
+.section .body ol li {
+    margin-top: 40px;
+}
+
+#new {
+    margin-top: 40px;
+}

@@ -1,0 +1,19 @@
+.open {
+    animation: .3s open forwards;
+}
+
+.close {
+    animation: .5s close forwards;
+}
+
+@keyframes open {
+    to {
+        left: 0;
+    }
+}
+
+@keyframes close {
+    to {
+        left: -60%;
+    }
+}
