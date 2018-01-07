@@ -1,0 +1,91 @@
+@import "main.sass"
+
+.latest-title
+  margin-bottom: 2px
+
+.article-header
+  margin-top: 95px
+  width: 70%
+  margin-left: -35%
+  left: 50%
+  position: relative
+
+.article-thumbnail
+  margin-top: 40px
+  width: 100%
+
+  .article-img
+    width: 100%
+
+.article-parent
+  font-size: 21px
+  line-height: 1.58
+  letter-spacing: -.003em
+  font-family: "MetaSerif-Book"
+  color: $in_focus
+  margin-top: 40px
+  width: 70%
+  margin-left: -35%
+  position: relative
+  left: 50%
+  margin-bottom: 95px
+
+
+  img
+    text-align: center
+
+  strong
+    @extend .header
+    @extend .large-header
+    margin-top: 50px
+
+  a
+    color: $accent
+
+.article-reaction
+  margin-bottom: 95px
+  border-bottom: solid 1px #CBCBCB
+  border-top: solid 1px #CBCBCB
+  text-align: center
+  padding-top: 10px
+
+  #desc
+    color: $out_of_focus
+
+  .heart
+    cursor: pointer
+    position: absolute
+    height: 150px
+    width: 150px
+    border-radius: 50%
+    margin-left: -75px
+    margin-top: -75px
+    top: 50%
+    left: 50%
+    background-image: url( 'https://abs.twimg.com/a/1446542199/img/t1/web_heart_animation.png')
+    background-position: left
+    background-repeat: no-repeat
+    background-size: 2900%
+
+  .heart:hover
+    background-position: right
+
+  .is_animating
+    animation: heart-burst .8s steps(28) 1
+
+  .wrapper
+    width: 100px
+    height: 100px
+    position: relative
+    margin-left: -50px
+    left: 50%
+    border: solid 1px #CBCBCB
+    border-radius: 50%
+    margin-bottom: 40px
+    margin-top: 20px
+
+@keyframes heart-burst
+  from
+    background-position: left
+  to
+    background-position: right

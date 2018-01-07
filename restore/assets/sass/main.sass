@@ -1,0 +1,515 @@
+//Fonts
+@font-face
+  font-family: "MetaSerif-Black"
+  src: url("../fonts/MetaSerifPro-Black.otf")
+
+@font-face
+  font-family: "MetaSerif-Book"
+  src: url("../fonts/MetaSerifPro-Book.otf")
+
+@font-face
+  font-family: "PTSans-Regular"
+  src: url("../fonts/PT_Sans-Web-Regular.ttf")
+
+@font-face
+  font-family: "PTSans-Bold"
+  src: url("../fonts/PT_Sans-Web-Bold.ttf")
+
+//Main Colors
+$background_main: #fff
+$green_faded: #E8F3ED
+
+//Text Colors
+$out_of_focus: rgba(0,0,0,.54)
+$in_focus: rgba(0,0,0,.74)
+$accent: #03A87C
+
+
+//Mixins
+=background_gradient($from-color, $to-color, $angle)
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from($from-color), to($to-color))
+  background: -webkit-linear-gradient($angle, $from-color, $to-color)
+  background: -moz-linear-gradient($angle $from-color, $to-color)
+  background: -ms-linear-gradient($angle, $from-color, $to-color)
+  background: -o-linear-gradient($angle, $from-color, $to-color)
+
+=center_abs()
+  -ms-transform: translate(-50%, -50%) /* IE 9 */
+  -webkit-transform: translate(-50%, -50%) /* Chrome, Safari, Opera */
+  -moz-transform: translate(-50%, -50%)
+  transform: translate(-50%, -50%)
+
+=reset()
+  -ms-transform: translate(50%, 50%) /* IE 9 */
+  -webkit-transform: translate(50%, 50%) /* Chrome, Safari, Opera */
+  -moz-transform: translate(50%, 50%)
+  transform: translate(50%, 50%)
+
+=rotate($deg)
+  -ms-transform: rotate($deg) /* IE 9 */
+  -webkit-transform: rotate($deg) /* Chrome, Safari, Opera */
+  -moz-transform: rotate($deg)
+  transform: rotate($deg)
+
+=center_horizontal()
+  -ms-transform: translateX(-50%) /* IE 9 */
+  -webkit-transform: translateX(-50%) /* Chrome, Safari, Opera */
+  -moz-transform: translateX(-50%)
+  transform: translateX(-50%)
+
+=center_vertical()
+  -ms-transform: translateY(-50%) /* IE 9 */
+  -webkit-transform: translateY(-50%) /* Chrome, Safari, Opera */
+  -moz-transform: translateY(-50%)
+  transform: translateY(-50%)
+
+=shadow($color)
+  box-shadow: -5px 3px 17px $color
+  -webkit-box-shadow: -5px 3px 17px $color
+  -moz-box-shadow: -5px 3px 17px $color
+
+//Messurements
+
+body
+  margin: 0 300px
+  max-width: 1300px
+  font-family: "PTSans-Regular"
+  height: 100%
+  overflow: hidden
+
+.loading
+  position: absolute
+  width: 100%
+  height: 100%
+  left: 0
+  top: 0
+  background: $green_faded
+  z-index: 10000
+  text-align: center
+
+  p
+    width: 40%
+    position: absolute
+    +center_abs()
+    left: 50%
+    top: 50%
+
+
+main
+  display: none
+
+.header
+  font-family: "MetaSerif-Black"
+  color: $in_focus
+  text-decoration: none
+  cursor: pointer
+
+.large-header
+  font-size: 35px
+
+.medium-header
+  font-size: 27px
+
+.small-link
+  color: $out_of_focus
+  font-size: 18px
+  text-decoration: none
+  cursor: pointer
+
+.exit-login
+  cursor: pointer
+
+.small-link-active
+  color: $accent
+  font-size: 14px
+  text-decoration: none
+  cursor: pointer
+
+.bordered-link-active
+  border: solid 1px $accent
+  padding: 7px 13px
+  border-radius: 7px
+  color: $accent
+  font-size: 14px
+  text-decoration: none
+
+.bordered-link-fill
+  border: solid 1px $in_focus
+  padding: 7px 16px
+  border-radius: 7px
+  background: $in_focus
+  color: #fff
+  font-size: 18px
+  text-decoration: none
+
+.bordered-link
+  border: solid 1px $in_focus
+  padding: 7px 16px
+  border-radius: 7px
+  color: $in_focus
+  font-size: 18px
+  text-decoration: none
+
+a
+  transition: .2 color
+
+a:hover
+  color: $accent
+
+.topic-sect-header
+  text-transform: capitalize
+
+//Navigation Header
+.nav-header
+  width: 100%
+  height: 88px
+  position: relative
+  border-bottom: solid 1px #CBCBCB
+
+  *
+    display: inline-block
+
+  .about-header
+    position: absolute
+    +center_vertical()
+    top: 50%
+    left: 20px
+    margin: 0
+
+  .header-nav
+    position: absolute
+    +center_abs()
+    top: 50%
+    left: 50%
+    margin: 0
+
+  .profile
+    display: none
+
+  .login,
+  .profile
+    position: absolute
+    +center_vertical()
+    top: 50%
+    right: 20px
+    margin: 0
+
+  .login *
+    margin-left: 45px
+
+  .login svg
+    stroke: $out_of_focus
+    position: relative
+    top: 5px
+
+  .profile *
+    margin-left: 20px
+
+  .profile img
+    width: 50px
+    height: 50px
+    border-radius: 50%
+    position: relative
+    margin-top: (88px - 50px)/2
+    top: 50%
+
+  .profile .user-info
+    position: relative
+    bottom: 10px
+
+  .profile .user-info *
+    display: block
+
+  .profile .user-info #profile-name
+    color: $in_focus
+    font-size: 16px
+    margin-bottom: 0
+
+  .profile .user-info #profile-email
+    color: $out_of_focus
+    font-size: 12px
+    margin-top: 0
+
+  .profile-options
+    background: #fff
+    padding: 10px
+    position: absolute
+    right: 10px
+    top: 80px
+    border: solid 1px #CBCBCB
+    border-radius: 5px
+    display: none
+
+  .profile-options *
+    color: $out_of_focus
+    display: block
+    text-decoration: none
+
+  .profile-options ul li
+    margin-top: 10px
+
+//Navigation Pages
+ul li
+  list-style: none
+
+ul
+  padding: 0
+
+.nav-pages
+  overflow-x: hidden
+
+.nav-pages .nav
+  margin-left: 20px
+  display: flex
+  flex-direction: row
+
+.nav-pages .nav li
+  display: inline-block
+  margin-right: 50px
+
+  a
+    font-size: 16px
+    color: $out_of_focus
+    text-decoration: none
+    transition: .2 color
+
+  a:hover
+    color: $accent
+
+  .active
+    color: $in_focus
+
+.footer
+  position: relative
+  width: 100%
+  border-top: solid 1px #CBCBCB
+  margin-top: 140px
+
+@media screen and (max-width: 1500px)
+  .header-nav
+    z-index: 100
+
+  .login
+    position: absolute
+    +center_vertical()
+    top: 50%
+    width: 100%
+    right: 20px
+    margin: 0
+
+  .login *
+    margin-left: 45px
+
+  .login .bordered-link-active
+    position: absolute
+    right: 0
+
+  .login svg
+    display: none
+
+  body
+    margin: 0 200px
+
+  .about-header
+    display: none
+
+  .nav-wrapper .header-nav
+    position: absolute
+    -ms-transform: translateX(50%) /* IE 9 */
+    -webkit-transform: translateX(50%) /* Chrome, Safari, Opera */
+    -moz-transform: translateX(50%)
+    transform: translateX(50%)
+    top: 30%
+    left: 0
+    margin: 0
+
+  .small-link-active
+    color: $accent
+    font-size: 14px
+    text-decoration: none
+
+  .bordered-link-active
+    border: solid 1px $accent
+    padding: 7px 13px
+    border-radius: 7px
+    color: $accent
+    font-size: 14px
+    text-decoration: none
+
+
+.about-state
+  width: 100%
+  height: 100%
+  display: none
+  top: 0
+  left: 0
+  opacity: 0
+  background: rgba(0,0,0,.5)
+  position: absolute
+  z-index: 100
+
+  .login-box
+    width: 50%
+    margin: 0 25%
+    position: absolute
+    min-height: 500px
+    margin-top: -250px
+    top: 50%
+    background: $green_faded
+    text-align: center
+    transform: scale(0)
+
+
+  .login-box .header
+    margin-bottom: 0
+
+  .login-box .exit-login
+    position: absolute
+    top: 10px
+    right: 10px
+
+  .login-box .desc
+    margin: 70px 80px
+
+  .quote-about
+    margin: 0 180px
+
+.bookmarks
+  width: 100%
+  height: 100%
+  display: none
+  top: 0
+  left: 0
+  opacity: 0
+  background: rgba(0,0,0,.5)
+  position: absolute
+  z-index: 100
+
+  .login-box
+    width: 50%
+    margin: 0 25%
+    position: absolute
+    min-height: 500px
+    margin-top: -250px
+    top: 50%
+    background: $green_faded
+    text-align: center
+    transform: scale(0)
+
+
+  .login-box .header
+    margin-bottom: 0
+
+  .login-box .exit-login
+    position: absolute
+    top: 10px
+    right: 10px
+
+  .login-box .desc
+    margin: 70px 80px
+
+  .quote-about
+    margin: 0 180px
+
+
+.login-state
+  width: 100%
+  height: 100%
+  display: none
+  top: 0
+  left: 0
+  opacity: 0
+  background: rgba(0,0,0,.5)
+  position: absolute
+  z-index: 100
+
+  .login-box
+    width: 50%
+    margin: 0 25%
+    position: absolute
+    min-height: 500px
+    margin-top: -250px
+    top: 50%
+    background: $green_faded
+    text-align: center
+    transform: scale(0)
+
+
+  .login-box .header
+    margin-bottom: 0
+
+  .login-box .exit-login
+    position: absolute
+    top: 10px
+    right: 10px
+
+  .login-box .login-options
+    margin-top: 40px
+
+  .login-box .option
+    width: 50%
+    margin: 0 25%
+    background: #fff
+    border-radius: 5px
+    margin-bottom: 20px
+    cursor: pointer
+    text-align: left
+
+  .login-box .option *
+    display: inline-block
+
+  .option p
+    left: 0
+    margin: 20px
+    color: $out_of_focus
+
+  svg
+    stroke: $out_of_focus
+    position: relative
+    top: 12px
+    margin-left: 20px
+
+.fade-in
+  animation: .3s fade-in forwards
+  display: block
+
+.zoom-in
+  animation: .3s zoom forwards
+
+@keyframes zoom
+  to
+    transform: scale(1)
+
+@keyframes fade-in
+  from
+    opacity: 0
+  to
+    opacity: 1
+
+@media screen and (max-width: 1100px)
+  body
+    margin: 0
+    max-width: 100%
+
+// View change handler
+.slideOff
+  animation: .1s slideOff forwards
+
+.hide
+  animation: .1s slideIn forwards
+
+.reveal
+  animation: .5s reveal forwards
+
+@keyframes slideOff
+  to
+    left: -200%
+    opacity: 0
+
+@keyframes reveal
+  to
+    left: -100%
+
+@keyframes slideIn
+  to
+    left: 0

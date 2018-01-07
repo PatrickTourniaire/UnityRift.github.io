@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Restore</title>
+    <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="assets/sass/main.css">
+    <link rel="stylesheet" type="text/css" href="assets/sass/feed.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.js"></script>
+  </head>
+  <body>
+
+    <script id="article-tenplate" type="text/template">
+      <div class="article {{key}}">
+        <div class="thumbnail-box"
+        style="
+          background: url('{{img}}') center no-repeat;
+          background-size: cover
+        ">
+        </div>
+        <div class="info-box">
+          <section class="wrapper">
+            <p class="header small-header art-header {{key}} {{category}}">{{title}}</p>
+            <section class="description">
+              <p>{{desc}}</p>
+            </section>
+          </section>
+
+          <section id="footer">
+            <a href="http://news.mit.edu/topic/artificial-intelligence2" class="publication"></a>
+            <div class="info">
+              <a id="author">{{author}}</a>
+              <p id="date">{{date}}</p>
+            </div>
+          </section>
+        </div>
+      </div>
+    </script>
+
+    <div class="loading">
+      <p class="header large-header">
+        “I visualize a time when we will be to robots what dogs are to humans, and I’m rooting for the machines.” —Claude Shannon
+      </p>
+    </div>
+
+    <div class="login-state">
+      <div class="login-box">
+        <img src="assets/svg/x.svg" class="exit-login" alt="exit"/>
+        <p class="header large-header login-header">Login to restore</p>
+        <p id="desc">Login with your preffered platform</p>
+
+        <div class="login-options">
+            <div class="option facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+              <p>Login with Facebook</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-state">
+        <div class="login-box">
+          <img src="assets/svg/x.svg" class="exit-login" alt="exit"/>
+          <p class="header large-header about-header">About Restore</p>
+          <p class="desc">
+            Restore was a project I created to educate people about advancements made in Artificial Inteligence. My
+            Algorythm searches the web for articles about AI and presents it in a more readable fasion. With restore
+            you can read about recent advancments in areas such as medicine, robotics or even sports but they are all
+            connected to artificial inteligence.
+          </p>
+          <p class="header larger-header quote-about">
+            “I visualize a time when we will be to robots what dogs are to humans, and I’m rooting for the machines.” —Claude Shannon
+          </p>
+        </div>
+      </div>
+
+      <div class="bookmarks">
+        <div class="login-box">
+          <img src="assets/svg/x.svg" class="exit-login" alt="exit"/>
+          <p class="header large-header about-header">Your Board</p>
+          <div class="desc">
+            <p>Select a topic to be displayed on your board.</p>
+            <select id="topic-personal">
+              <option value="computer modeling">Computer Modeling</option>
+              <option value="data">Data</option>
+              <option value="machine learning">Machine Learning</option>
+              <option value="medicine">Medical</option>
+              <option value="robots">Robots</options>
+            </select>
+          </div>
+        </div>
+      </div>
+
+    <div class="nav-wrapper">
+      <div class="nav-header">
+        <p class="small-link about-header">About Restore</p>
+        <a href="index.html" class="header large-header header-nav">Restore</a>
+
+        <div class="login">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+            <circle cx="10.5" cy="10.5" r="7.5"></circle>
+            <line x1="21" y1="21" x2="15.8" y2="15.8"></line>
+          </svg>
+          <a href="#" class="small-link-active login-btn">Sign in</a>
+          <a href="#" class="bordered-link-active">Get started</a>
+        </div>
+        <div class="profile">
+          <div class="user-info">
+            <p id="profile-name"></p>
+            <p id="profile-email"></p>
+          </div>
+          <img src="#" id="profile-img"/>
+        </div>
+        <div class="profile-options">
+          <ul>
+            <li><a href="#">Bookmarks</a></li>
+            <li><a href="#">Logout</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="profile-menu">
+        <ul>
+          <li><a href="#" id="board">Your board</a></li>
+          <li><a href="#" id="sign-out">Logout</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-pages">
+        <ul class="nav">
+          <li><a href="index.html" class="active" id="home">Home</a></li>
+          <li><a href="#" id="cm">Computer Modeling</a></li>
+          <li><a href="#" id="data">Data</a></li>
+          <li><a href="#" id="ml">Machine Learning</a></li>
+          <li><a href="#" id="medicine">Medical</a></li>
+          <li><a href="#" id="robots">Robots</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <main class="feed">
+
+      <section class="topic-articles top-articles-parent">
+        <section class="articles-header">
+          <p id="header-mnd medium-header article-section-header">More Articles</p>
+        </section>
+
+        <section class="articles-wrapper">
+
+        </section>
+      </section>
+
+      <section class="footer">
+        <div class="nav-pages">
+          <ul class="nav">
+            <li>Copyright © Patrick Tourniaire</li>
+          </ul>
+        </div>
+      </section>
+
+    </main>
+
+    <script src="js/firebaseInit.js"></script>
+    <script src="js/postRequests.js"></script>
+    <script src="js/clickEvents.js"></script>
+    <script src="js/userHandler.js"></script>
+    <script src="js/fetchTopics.js"></script>
+    <!--<script src="js/behavior.js"></script>-->
+
+    <script>
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        //Hide login state
+        $(".login").css("display", "none");
+        $(".profile").css("display", "block");
+        $(".getStarted").css("display", "none");
+
+        console.log("Logged in");
+        var user = firebase.auth().currentUser;
+
+        user.providerData.forEach(function (profile) {
+          console.log("Sign-in provider: " + profile.providerId);
+          console.log("  Provider-specific UID: " + profile.uid);
+          console.log("  Name: " + profile.displayName);
+          console.log("  Email: " + profile.email);
+          console.log("  Photo URL: " + profile.photoURL);
+
+          $("#profile-img").attr("src", profile.photoURL);
+          $("#profile-name").html(profile.displayName);
+          $("#profile-email").html(profile.email);
+        });
+
+      } else {
+        console.log("Not logged in");
+
+        //Show login state
+        $(".login").css("display", "block");
+        $(".profile").css("display", "none");
+        $(".getStarted").css("display", "block");
+      }
+    });
+    </script>
+  </body>
+</html>
